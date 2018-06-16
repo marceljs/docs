@@ -1,3 +1,4 @@
 module.exports = {
-	base: 'https://marceljs.github.io/marcel-website'
+	base: 'https://marceljs.github.io/marcel-website',
+	distDir: '../'
 }
