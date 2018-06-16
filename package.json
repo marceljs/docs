@@ -1,0 +1,14 @@
+{
+  "name": "marcel-website",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "git@github.com:marceljs/marcel-website.git",
+  "author": "Dan Burzo <danburzo@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "marcel": "^0.1.0"
+  },
+  "scripts": {
+  	"marcel": "./node_modules/marcel/bin/cli.js"
+  }
+}
