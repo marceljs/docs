@@ -7,7 +7,7 @@
   "license": "MIT",
   "devDependencies": {
     "gh-pages": "^1.2.0",
-    "marcel": "^0.1.0"
+    "marcel": "^0.2.1"
   },
   "scripts": {
     "marcel": "./node_modules/marcel/bin/cli.js",
