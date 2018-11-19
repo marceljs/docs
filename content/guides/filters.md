@@ -17,7 +17,7 @@ Sorts an array by reading `property` off each object in the array. It can read d
 Usage:
 
 ```html
-{% for each post in posts | sort_by('data.title') %}
+{% for post in posts | sort_by('data.title') %}
 	<div class='post'>
 		<h2>{{ post.data.title }}</h2>
 	</div>
