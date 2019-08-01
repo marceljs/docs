@@ -1,3 +1,3 @@
 module.exports = {
-	base: 'https://marceljs.github.io'
+	base: 'https://marceljs.github.io/docs/'
 }

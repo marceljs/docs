@@ -2,3 +2,27 @@ body {
 	font-family: Helvetica, Arial, sans-serif;
 	line-height: 1.4;
 }
+
+[is=m-note] {
+	padding: 1em;
+	margin: 0;
+	background: #fffc99;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table th, table td {
+	text-align: left;
+	padding: 0.5em 0;
+}
+
+table tr {
+	border-bottom: 1px solid #000;
+}
+
+code, kbd, samp, var {
+	font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+}

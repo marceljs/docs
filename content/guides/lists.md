@@ -1,4 +1,6 @@
-# Lists
+---
+title: Working with lists
+---
 
 Marcel can build lists from your custom taxonomies.
 

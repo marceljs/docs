@@ -16,13 +16,15 @@ Sorts an array by reading `property` off each object in the array. It can read d
 
 Usage:
 
-```html
+{% raw %}
+```twig
 {% for post in posts | sort_by('data.title') %}
 	<div class='post'>
 		<h2>{{ post.data.title }}</h2>
 	</div>
 {% endfor %}
 ```
+{% endraw %}
 
 ## Custom filters
 
@@ -39,9 +41,11 @@ module.exports = function(str) {
 
 And then you can use this filter in your templates:
 
+{% raw %}
 ```html
 I want to shout {{ post.title | uppercase }}.
 ```
+{% endraw %}
 
 You can pass additional arguments to the filter. For example:
 
@@ -52,9 +56,11 @@ module.exports = function(num, how_much) {
 }
 ```
 
+{% raw %}
 ```html
 {{ post.likes | add(10) }}
 ```
+{% endraw %}
 
 To write an asynchronous filter, use an `async function` as the filter's definition:
 

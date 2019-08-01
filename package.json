@@ -6,11 +6,11 @@
   "author": "Dan Burzo <danburzo@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "gh-pages": "^1.2.0",
-    "marcel": "^0.2.1"
+    "gh-pages": "^1.2.0"
   },
   "scripts": {
-    "marcel": "./node_modules/marcel/bin/cli.js",
-    "deploy": "yarn marcel && gh-pages -d dist"
+    "start": "node ./node_modules/marcel/src/cli.js serve",
+    "build": "rm -rf dist && node ./node_modules/marcel/src/cli.js build",
+    "deploy": "yarn build && gh-pages -d dist"
   }
 }
