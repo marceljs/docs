@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Marcel</title>
+	<link rel='stylesheet' href='/style.css'/>
+</head>
+<body>
+	
+<h1>Working with data</h1>
+<div><p>You can add pieces of data in your site's <code>data</code> folder. The data will be available in all your templates under <code>data.&#x3C;filename></code>.</p>
+<blockquote>
+<p>You can change where Marcel looks for data files with <a href="#todo">the <code>dataDir</code> option</a> in the configuration file.</p>
+</blockquote>
+<h2>Supported formats</h2>
+<ul>
+<li><code>.json</code> — JSON files.</li>
+<li><code>.yaml</code> — YAML files, parsed with <a href="https://github.com/nodeca/js-yaml">js-yaml</a>.</li>
+<li><code>.csv</code> and <code>.tsv</code> – CSV/TSV files, parsed with <a href="https://github.com/d3/d3-dsv">d3-dsv</a>.</li>
+<li><code>.ndtxt</code> — newline-delimited text files.</li>
+<li><code>.js</code> — JavaScript files.</li>
+</ul>
+<h3>JavaScript data files</h3>
+<p>You can use JavaScript for data files to build the data file dynamically. Your file should export either the data itself or a function (which can be asychronous).</p>
+<p><strong>data/github-repos.js</strong></p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> got <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'got'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span><span class="token method-variable function-variable method function property-access">exports</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token function">got</span><span class="token punctuation">(</span>
+        <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">https://api.github.com/users/danburzo/repos</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> 
+        <span class="token punctuation">{</span> json<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div>
+
+</body>
+</html>

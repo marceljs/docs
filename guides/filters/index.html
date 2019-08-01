@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Marcel</title>
+	<link rel='stylesheet' href='/style.css'/>
+</head>
+<body>
+	
+<h1>Filters</h1>
+<div><h2>Default filters</h2>
+<p>In addition to the filters <a href="https://mozilla.github.io/nunjucks/templating.html#builtin-filters">built into Nunjucks</a>, Marcel offers the following filters:</p>
+<p><strong>format_date(format)</strong></p>
+<p>Formats a date using <a href="https://github.com/iamkun/dayjs">dayjs</a>. See <a href="https://github.com/iamkun/dayjs/blob/master/docs/en/API-reference.md#list-of-all-available-formats">a list of available formats</a>.</p>
+<p><strong>sort_by(property)</strong></p>
+<p>Sorts an array by reading <code>property</code> off each object in the array. It can read deep properties from the object, e.g. <code>data.title</code>.</p>
+<p>Usage:</p>
+<pre class="language-html"><code class="language-html">{% for post in posts | sort_by('data.title') %}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>post<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h2</span><span class="token punctuation">></span></span>{{ post.data.title }}<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h2</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+{% endfor %}
+</code></pre>
+<h2>Custom filters</h2>
+<p>You can create your own filters to use in Nunjucks templates. Add them in a <code>filters/</code> folder.</p>
+<p>The file's name becomes the name of the filter. Here's a basic filter:</p>
+<p><strong>filters/uppercase.js</strong></p>
+<pre class="language-js"><code class="language-js">module<span class="token punctuation">.</span><span class="token method-variable function-variable method function property-access">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> str<span class="token punctuation">.</span><span class="token method function property-access">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>And then you can use this filter in your templates:</p>
+<pre class="language-html"><code class="language-html">I want to shout {{ post.title | uppercase }}.
+</code></pre>
+<p>You can pass additional arguments to the filter. For example:</p>
+<p><strong>filters/add.js</strong></p>
+<pre class="language-js"><code class="language-js">module<span class="token punctuation">.</span><span class="token method-variable function-variable method function property-access">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">num<span class="token punctuation">,</span> how_much</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> num <span class="token operator">+</span> how_much<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class="language-html"><code class="language-html">{{ post.likes | add(10) }}
+</code></pre>
+<p>To write an asynchronous filter, use an <code>async function</code> as the filter's definition:</p>
+<p><strong>filters/async.js</strong></p>
+<pre class="language-js"><code class="language-js">module<span class="token punctuation">.</span><span class="token method-variable function-variable method function property-access">exports</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">arg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token function">some_thing</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>You can change where Marcel looks for filters with <a href="#todo">the <code>filterDir</code> option</a> in the configuration file.</p>
+</blockquote></div>
+
+</body>
+</html>

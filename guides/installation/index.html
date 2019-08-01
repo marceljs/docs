@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Marcel</title>
+	<link rel='stylesheet' href='/style.css'/>
+</head>
+<body>
+	
+<h1>Installation</h1>
+<div><h2>Prerequisites</h2>
+<p>Marcel is a JavaScript tool that is distributed through NPM (Node Packet Manager). To work with Marcel, you have to have <a href="https://nodejs.org/en/">Node.js</a> installed. The <code>npm</code> command-line tool, through which you interact with NPM, usually comes bundled with Node. </p>
+<p>I recommend also installing <a href="https://yarnpkg.com/en/">Yarn</a>, which is an alternative to <code>npm</code> for installing packages — it's faster and comes with a few more features. The installation instructions below use <code>yarn</code> rather than <code>npm</code>.</p>
+<h2>Setting up a new project</h2>
+<p>Open up your command-line and create a new project folder, then navigate to it:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> my-project
+<span class="token builtin class-name">cd</span> my-project
+</code></pre>
+<p>To install packages from NPM to our project, we first need to create a <code>package.json</code> file for it. The command below does just that:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">yarn</span> init --yes
+</code></pre>
+<p>(The <code>--yes</code> flag instructs Yarn to skip any questions it would normally ask about your project, and just create a <code>package.json</code> for it).</p>
+<p>Install Marcel with:</p>
+<pre><code>yarn add --dev marcel
+</code></pre>
+<p>(We're installing Marcel as a <em>development dependency</em>, because our website doesn't need Marcel to run once it's built. It's only during development that we use it.)</p>
+<p>Next, create a file called <code>marcel.config.js</code> in your project's root folder, with the following content:</p>
+<pre class="language-js"><code class="language-js">module<span class="token punctuation">.</span><span class="token property-access">exports</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    title<span class="token punctuation">:</span> <span class="token string">'My new website'</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Now let's create our first piece of content. Create a <code>content</code> folder in your project's root, and a <code>my-first-post.md</code> file inside it, with the content:</p>
+<pre class="language-md"><code class="language-md">
+<span class="token title important"><span class="token punctuation">#</span> Hello world</span>
+
+</code></pre></div>
+
+</body>
+</html>
