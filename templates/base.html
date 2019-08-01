@@ -7,7 +7,20 @@
 	<link rel='stylesheet' href='/highlight.css'/>
 </head>
 <body>
+	<header>
+		<nav>
+			<ul>
+				{% for item in data.menu %}
+					{% set p = Post.for(item) %}
+					<li class='{% if p === post %}active{% endif %}'>
+						<a href='{{p.permalink}}'>{{p.title}}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</nav>
+	</header>
 	{% block main %}
 	{% endblock %}
+	<script src='/tasks.js'></script>
 </body>
 </html>
