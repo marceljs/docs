@@ -9,8 +9,12 @@
     "gh-pages": "^1.2.0"
   },
   "scripts": {
-    "start": "node ./node_modules/marcel/src/cli.js serve",
+    "start": "node ./node_modules/marcel/src/cli.js serve --watch",
+    "watch": "node ./node_modules/marcel/src/cli.js build --watch",
     "build": "rm -rf dist && node ./node_modules/marcel/src/cli.js build",
     "deploy": "yarn build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "time-require": "^0.1.2"
   }
 }

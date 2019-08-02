@@ -42,15 +42,15 @@ Default: `static`
 
 Default: `dist`
 
-#### `filterDir` 
-
-Default: `filters`
-
 ### Templates
 
 #### `templateExt` 
 
 Default: `html`
+
+#### `filters`
+
+Add custom Nunjucks filters. See the [Filters](../guides/filters.md) guide.
 
 ### Lists
 

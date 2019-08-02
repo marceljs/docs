@@ -4,7 +4,7 @@ title: Getting Started
 
 ## Prerequisites
 
-Marcel is a JavaScript tool that is distributed through NPM (Node Packet Manager). To work with Marcel, you have to have [Node.js](https://nodejs.org/en/) installed. The `npm` command-line tool, through which you interact with NPM, usually comes bundled with Node. 
+Marcel is a JavaScript tool that distributed through npm (Node Package Manager). To work with Marcel, you have to have [Node.js](https://nodejs.org/en/) installed. The `npm` command-line tool, through which you interact with npm, comes bundled with Node. 
 
 I recommend also installing [Yarn](https://yarnpkg.com/en/), which is an alternative to `npm` for installing packages — it's faster and comes with a few more features. The installation instructions below use `yarn` rather than `npm`.
 
@@ -27,7 +27,7 @@ yarn init --yes
 
 Install Marcel with:
 
-```
+```bash
 yarn add --dev marcel
 ```
 

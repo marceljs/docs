@@ -28,7 +28,7 @@ Usage:
 
 ## Custom filters
 
-You can create your own filters to use in Nunjucks templates. Add them in a `filters/` folder.
+You can create your own filters to use in Nunjucks templates. Add them to the [`filters` object](../reference/configuration#filters) in your config.
 
 The file's name becomes the name of the filter. Here's a basic filter:
 
